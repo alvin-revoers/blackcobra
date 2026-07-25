@@ -12,7 +12,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url('assets/images/39060.jpg');
+    background-image: url('assets/images/anime-bg.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -21,7 +21,7 @@ body {
 
 body::before {
     content: '';
-    position: absolute;
+    position: fixed;
     inset: 0;
     background: rgba(0, 0, 0, 0.75);
     z-index: 0;
@@ -32,6 +32,9 @@ body::before {
     z-index: 1;
     text-align: center;
     padding: 40px 20px;
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .hero h1 {
@@ -89,15 +92,27 @@ footer {
     font-size: 0.9rem;
 }
 
+/* ===== RESPONSIVE ===== */
 @media (max-width: 600px) {
     .hero h1 {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
+        letter-spacing: 2px;
+    }
+    .subtitle {
+        font-size: 1rem;
     }
     .btn {
-        padding: 12px 28px;
-        font-size: 0.9rem;
+        padding: 12px 24px;
+        font-size: 0.85rem;
+        width: 100%;
+        max-width: 280px;
+        box-sizing: border-box;
     }
     .button-group {
-        gap: 12px;
+        flex-direction: column;
+        align-items: center;
+    }
+    .container {
+        padding: 20px 16px;
     }
 }
